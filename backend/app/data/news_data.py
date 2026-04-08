@@ -1,0 +1,38 @@
+NEWS_ITEMS = [
+    {
+        "id": 1,
+        "title": "Tokenized proof is expanding beyond finance into product records and credentials",
+        "category": "Non-Financial RWA",
+        "date": "2026-04-08",
+        "source": "Internal Demo Feed",
+        "summary": "The conversation around RWAs is moving from purely investable assets toward trusted records, provenance, and portable verification workflows.",
+        "why_it_matters": "This directly supports the platform's educational positioning around non-financial RWAs.",
+    },
+    {
+        "id": 2,
+        "title": "Brands continue testing digital membership, provenance, and anti-counterfeit layers",
+        "category": "Brands / Collectibles",
+        "date": "2026-04-07",
+        "source": "Internal Demo Feed",
+        "summary": "Membership logic, serialized product records, and collectible drops remain high-potential entry points for consumer-facing RWA use cases.",
+        "why_it_matters": "It aligns with the collectibles, luxury, and ticketing directions shown on the platform.",
+    },
+    {
+        "id": 3,
+        "title": "Gaming teams are prioritizing wallet UX and non-transferable achievements over speculation-first designs",
+        "category": "Gaming",
+        "date": "2026-04-06",
+        "source": "Internal Demo Feed",
+        "summary": "Product teams are finding that SBT-style credentials and event access are easier for mainstream users to understand than pure trading narratives.",
+        "why_it_matters": "This matches the uploaded recommendation to begin gaming pilots with SBT achievements and event tickets.",
+    },
+    {
+        "id": 4,
+        "title": "Tea, baijiu, and other origin-sensitive goods remain strong candidates for traceability-led RWA design",
+        "category": "Supply Chain",
+        "date": "2026-04-05",
+        "source": "Internal Demo Feed",
+        "summary": "For non-standard goods, trust and provenance are often more valuable than financing narratives in the first deployment phase.",
+        "why_it_matters": "This is exactly the logic reflected in the baijiu and tea research pages.",
+    },
+]
