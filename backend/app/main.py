@@ -15,7 +15,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-)
+)# test test
 
 # news.py 里已经有 prefix="/api/news"
 app.include_router(news.router)
