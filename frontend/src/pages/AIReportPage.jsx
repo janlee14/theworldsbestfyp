@@ -54,7 +54,7 @@ export default function AIReportPage() {
   return (
     <div style={styles.page}>
       <div style={styles.container}>
-        <h1 style={styles.title}>AI Business Report</h1>
+        <h1 style={styles.title}>AI RWA Business Report</h1>
         <p style={styles.subtitle}>
           Enter company information and generate a tailored non-financial RWA report with DeepSeek.
         </p>
