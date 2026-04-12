@@ -72,16 +72,10 @@ export default function RwaIndustryOverviewPage() {
         </div>
         <div className="section">
           <SectionHeader title="Beginner takeaway" />
-          <div className="card">
+          <ul className="list">
             <div className="subheading">RWA = digital object + real-world right + trusted source of truth + clear rules for transfer or verification</div>
             <div className="muted">If one of those parts is missing, the system is weak.</div>
-          </div>
-          <div className="card" style={{ marginTop: "1rem" }}>
-            <div className="subheading">Summary of this section</div>
-            <ul className="list list-tight">
-              {content.summary.map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </div>
+          </ul>
         </div>
       </section>
 
