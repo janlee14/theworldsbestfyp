@@ -1,1 +1,1 @@
-__all__ = ["news", "industries", "reports", "forum"]
+__all__ = ["news", "industries", "reports", "forum", "translate"]

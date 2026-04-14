@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from app.routers import news, industries, reports, forum
+from app.routers import news, industries, reports, forum, translate
 
 app = FastAPI(title="Non-Financial RWA Hub API", version="0.2.0")
 
@@ -19,6 +19,7 @@ app.add_middleware(
 
 # news.py 里已经有 prefix="/api/news"
 app.include_router(news.router)
+app.include_router(translate.router)
 
 # 这些 router 继续在这里加 prefix
 app.include_router(industries.router, prefix="/api/industries", tags=["industries"])
