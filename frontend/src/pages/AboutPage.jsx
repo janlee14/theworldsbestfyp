@@ -1,14 +1,16 @@
+import { useI18n } from "../i18n";
+import { aboutContent } from "../data/aboutContent";
+
 export default function AboutPage() {
+  const { language } = useI18n();
+  const content = aboutContent[language] || aboutContent.en;
+
   return (
     <section className="section">
-      <div className="badge">About this platform</div>
-      <h1 className="page-title">This project is now a real front-end website, not just an API shell.</h1>
-      <p>
-        The current version integrates the uploaded website content into working pages and keeps the platform structure you asked for: Home, learning pages, news, industry research, AI report, and forum.
-      </p>
-      <p className="muted">
-        The backend handles API routes, AI report generation logic, forum CRUD, likes, and static hosting of the built React frontend so opening the backend URL shows the actual website.
-      </p>
+      <div className="badge">{content.badge}</div>
+      <h1 className="page-title">{content.title}</h1>
+      <p>{content.body1}</p>
+      <p className="muted">{content.body2}</p>
     </section>
   );
 }

@@ -1,12 +1,16 @@
+import { useI18n } from "../i18n";
+
 export default function Footer() {
+  const { t } = useI18n();
+
   return (
     <footer className="footer">
       <div className="footer-inner">
         <div>
-          <div className="footer-brand">Non-Financial RWA Hub</div>
-          <div>Built as an integrated platform for merchants, users, researchers, and industry professionals.</div>
+          <div className="footer-brand">{t.footer.brand}</div>
+          <div>{t.footer.description}</div>
         </div>
-        <div>React + FastAPI MVP · Frontend content integrated into the site</div>
+        <div>{t.footer.stack}</div>
       </div>
     </footer>
   );

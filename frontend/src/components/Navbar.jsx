@@ -1,23 +1,27 @@
 import { NavLink } from "react-router-dom";
-
-const navItems = [
-  ["/", "Home"],
-  ["/learn-rwa", "Learn RWA"],
-  ["/news", "News"],
-  ["/research", "Industry Research"],
-  ["/ai-report", "AI Report"],
-  ["/forum", "Forum"],
-  ["/about", "About"],
-];
+import { useI18n } from "../i18n";
 
 export default function Navbar() {
+  const { t } = useI18n();
+
+  const navItems = [
+    ["/", t.nav.home],
+    ["/learn-rwa", t.nav.learnRwa],
+    ["/news", t.nav.news],
+    ["/research", t.nav.research],
+    ["/ai-report", t.nav.aiReport],
+    ["/forum", t.nav.forum],
+    ["/about", t.nav.about],
+  ];
+
   return (
     <header className="navbar">
       <div className="nav-inner">
         <NavLink to="/" className="brand-wrap">
-          <span className="brand">Non-Financial RWA Hub</span>
-          <span className="brand-subtitle">Education · Research · AI Report · Community</span>
+          <span className="brand">{t.brand.title}</span>
+          <span className="brand-subtitle">{t.brand.subtitle}</span>
         </NavLink>
+
         <nav className="nav-links">
           {navItems.map(([path, label]) => (
             <NavLink

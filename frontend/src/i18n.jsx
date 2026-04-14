@@ -7,7 +7,7 @@ const translations = {
       learnRwa: 'Learn RWA',
       news: 'News',
       research: 'Industry Research',
-      aiReport: 'AI Business Report',
+      aiReport: 'AI Report',
       forum: 'Forum',
       about: 'About',
     },
@@ -27,6 +27,16 @@ const translations = {
       english: 'English',
       chinese: '中文',
     },
+    brand: {
+      title: 'Non-Financial RWA Hub',
+      subtitle: 'Education · Research · AI Report · Community',
+    },
+    footer: {
+      brand: 'Non-Financial RWA Hub',
+      description:
+        'Built as an integrated platform for merchants, users, researchers, and industry professionals.',
+      stack: 'React + FastAPI MVP · Frontend content integrated into the site',
+    },
   },
   zh: {
     nav: {
@@ -34,7 +44,7 @@ const translations = {
       learnRwa: 'RWA入门',
       news: '新闻',
       research: '行业研究',
-      aiReport: 'AI商业报告',
+      aiReport: 'AI报告',
       forum: '论坛',
       about: '关于我们',
     },
@@ -53,6 +63,16 @@ const translations = {
       label: '语言',
       english: 'English',
       chinese: '中文',
+    },
+    brand: {
+      title: '非金融 RWA 平台',
+      subtitle: '教育 · 研究 · AI报告 · 社区',
+    },
+    footer: {
+      brand: '非金融 RWA 平台',
+      description:
+        '这是一个面向商家、用户、研究者和行业从业者的一体化平台。',
+      stack: 'React + FastAPI MVP · 前端内容已整合进网站',
     },
   },
 }

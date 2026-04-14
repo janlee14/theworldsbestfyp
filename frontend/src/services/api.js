@@ -26,4 +26,9 @@ export const api = {
   createForumPost: (payload) => request('/forum/posts', { method: 'POST', body: JSON.stringify(payload) }),
   createComment: (postId, payload) => request(`/forum/posts/${postId}/comments`, { method: 'POST', body: JSON.stringify(payload) }),
   likePost: (postId) => request(`/forum/posts/${postId}/like`, { method: 'POST' }),
+  translateTexts: (payload) =>
+  request('/translate', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  }),
 };

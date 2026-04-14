@@ -5,6 +5,11 @@ export default function LanguageSwitcher() {
   const { language, setLanguage, t } = useI18n()
   const [open, setOpen] = useState(false)
 
+  const changeLanguage = async (nextLang) => {
+    setLanguage(nextLang)
+    setOpen(false)
+  }
+
   return (
     <div style={styles.wrapper}>
       {open && (
@@ -14,10 +19,7 @@ export default function LanguageSwitcher() {
               ...styles.option,
               ...(language === 'en' ? styles.optionActive : {}),
             }}
-            onClick={() => {
-              setLanguage('en')
-              setOpen(false)
-            }}
+            onClick={() => changeLanguage('en')}
           >
             {t.language.english}
           </button>
@@ -27,10 +29,7 @@ export default function LanguageSwitcher() {
               ...styles.option,
               ...(language === 'zh' ? styles.optionActive : {}),
             }}
-            onClick={() => {
-              setLanguage('zh')
-              setOpen(false)
-            }}
+            onClick={() => changeLanguage('zh')}
           >
             {t.language.chinese}
           </button>

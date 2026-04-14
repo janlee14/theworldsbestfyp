@@ -1,35 +1,21 @@
 import { Link } from "react-router-dom";
-
-const pages = [
-  {
-    path: "/rwa-industry-overview",
-    title: "RWA Industry Overview",
-    text: "From market snapshot and why people care, to what an RWA actually is and how to read big headlines.",
-  },
-  {
-    path: "/rwa-primitives",
-    title: "RWA Primitives for Beginners",
-    text: "The 8 core primitives, use-case comparison table, and the general risks beginners should know.",
-  },
-  {
-    path: "/non-financial-rwas",
-    title: "Non-Financial RWAs",
-    text: "Trade documents, credentials, environmental assets, product passports, regulation snapshot, and FAQ.",
-  },
-];
+import { useI18n } from "../i18n";
+import { learnHubContent } from "../data/learnHubContent";
 
 export default function LearnHubPage() {
+  const { language } = useI18n();
+  const content = learnHubContent[language] || learnHubContent.en;
+
   return (
     <>
       <section className="hero">
-        <div className="badge">RWA Industry Overview & Primitives for Beginners</div>
-        <h1 className="page-title">Three structured learning pages are now built into the website.</h1>
-        <p className="page-subtitle">
-          This section is directly filled with the uploaded content for website part two. It turns your notes into full web pages instead of leaving them as standalone documents.
-        </p>
+        <div className="badge">{content.hero.badge}</div>
+        <h1 className="page-title">{content.hero.title}</h1>
+        <p className="page-subtitle">{content.hero.subtitle}</p>
       </section>
+
       <section className="grid-3">
-        {pages.map((page) => (
+        {content.pages.map((page) => (
           <Link key={page.path} to={page.path} className="card">
             <div className="subheading">{page.title}</div>
             <div className="muted">{page.text}</div>
