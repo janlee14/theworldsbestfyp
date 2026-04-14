@@ -1,13 +1,15 @@
 import { useEffect, useMemo, useState } from 'react'
+import { useI18n } from '../i18n'
 
-function formatDate(dateString) {
-  if (!dateString) return 'Unknown date'
+function formatDate(dateString, language) {
+  if (!dateString) return language === 'zh' ? '未知日期' : 'Unknown date'
   const date = new Date(dateString)
   if (Number.isNaN(date.getTime())) return dateString
-  return date.toLocaleString()
+  return date.toLocaleString(language === 'zh' ? 'zh-CN' : 'en-US')
 }
 
 export default function NewsPage() {
+  const { language, t } = useI18n()
   const [news, setNews] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -18,7 +20,7 @@ export default function NewsPage() {
         setLoading(true)
         setError('')
 
-        const res = await fetch('/api/news')
+        const res = await fetch(`/api/news?lang=${language}`)
         const text = await res.text()
 
         let data
@@ -26,11 +28,11 @@ export default function NewsPage() {
           data = JSON.parse(text)
         } catch {
           console.error('Non-JSON response from /api/news:', text)
-          throw new Error('The /api/news endpoint returned HTML instead of JSON.')
+          throw new Error(t.news.errorHtml)
         }
 
         if (!res.ok) {
-          throw new Error(data.detail || 'Failed to fetch news')
+          throw new Error(data.detail || t.news.errorFetch)
         }
 
         setNews(data.results || [])
@@ -42,11 +44,11 @@ export default function NewsPage() {
     }
 
     fetchNews()
-  }, [])
+  }, [language, t])
 
   const content = useMemo(() => {
     if (loading) {
-      return <div style={styles.stateBox}>Loading latest news...</div>
+      return <div style={styles.stateBox}>{t.news.loading}</div>
     }
 
     if (error) {
@@ -54,7 +56,7 @@ export default function NewsPage() {
     }
 
     if (!news.length) {
-      return <div style={styles.stateBox}>No news available right now.</div>
+      return <div style={styles.stateBox}>{t.news.empty}</div>
     }
 
     return (
@@ -68,7 +70,7 @@ export default function NewsPage() {
             style={styles.card}
           >
             <div style={styles.cardTop}>
-              <span style={styles.badge}>News</span>
+              <span style={styles.badge}>{t.news.badge}</span>
               <span style={styles.index}>{String(index + 1).padStart(2, '0')}</span>
             </div>
 
@@ -76,18 +78,18 @@ export default function NewsPage() {
 
             <div style={styles.metaRow}>
               <span style={styles.meta}>
-                {item.source_name || item.source || 'Source unavailable'}
+                {item.source_name || item.source || t.news.fallbackSource}
               </span>
               <span style={styles.dot}>•</span>
               <span style={styles.meta}>
-                {formatDate(item.pubDate || item.date)}
+                {formatDate(item.pubDate || item.date, language)}
               </span>
             </div>
           </a>
         ))}
       </div>
     )
-  }, [loading, error, news])
+  }, [loading, error, news, t, language])
 
   return (
     <div style={styles.page}>
@@ -95,10 +97,10 @@ export default function NewsPage() {
         <div style={styles.heroGlowLeft} />
         <div style={styles.heroGlowRight} />
 
-        <p style={styles.eyebrow}>Live feed</p>
-        <h1 style={styles.heading}>News</h1>
+        <p style={styles.eyebrow}>{t.news.eyebrow}</p>
+        <h1 style={styles.heading}>{t.news.title}</h1>
         <p style={styles.subheading}>
-          Track recent market, crypto, and RWA-related headlines in one place.
+          {t.news.subtitle}
         </p>
       </section>
 
