@@ -23,6 +23,7 @@ This version has been rebuilt so that the website content is actually filled int
 ```bash
 cd frontend
 npm install
+npm install react-markdown
 npm run build
 ```
 

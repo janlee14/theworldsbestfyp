@@ -1,3 +1,4 @@
+import json
 import os
 from pathlib import Path
 
@@ -40,7 +41,8 @@ def generate_report(payload: AIReportRequest):
         base_url=DEEPSEEK_BASE_URL,
     )
 
-    output_language = "中文" if payload.language.lower().startswith("zh") else "English"
+    is_zh = payload.language.lower().startswith("zh")
+    output_language = "中文" if is_zh else "English"
 
     rwa_ltd_profile = """
 About rwa.ltd / INERI
@@ -115,7 +117,15 @@ The goal is to explain how the user’s company could collaborate with rwa.ltd, 
 - 输出语言必须跟随用户指定语言
 - 尽量使用 markdown 标题、分点和小节，让结果更像正式报告
 
-固定输出格式如下：
+你必须返回一个 JSON 对象，且只能返回 JSON，不要输出任何额外解释文字。
+JSON 格式必须是：
+
+{{
+  "summary": "一句强而有力的总结，像给管理层的判断，直指这家公司应如何借助 rwa.ltd 启动或推进非金融RWA代币化。必须简洁、有判断、有行动导向。长度控制在 1-2 句话内。",
+  "report": "完整 markdown 报告正文"
+}}
+
+report 的固定结构如下：
 
 # 面向 [公司名称] 的非金融RWA合作匹配报告
 
@@ -231,14 +241,31 @@ The goal is to explain how the user’s company could collaborate with rwa.ltd, 
             ],
             stream=False,
             temperature=0.7,
+            response_format={"type": "json_object"},
         )
 
-        report_text = completion.choices[0].message.content if completion.choices else ""
+        raw_text = completion.choices[0].message.content if completion.choices else ""
+        if not raw_text:
+            raise HTTPException(status_code=500, detail="DeepSeek returned an empty response.")
+
+        parsed = json.loads(raw_text)
+        summary = (parsed.get("summary") or "").strip()
+        report_text = (parsed.get("report") or "").strip()
+
         if not report_text:
             raise HTTPException(status_code=500, detail="DeepSeek returned an empty report.")
 
+        if not summary:
+            summary = (
+                "该公司具备启动非金融RWA代币化的现实基础，建议优先从低风险、易验证、"
+                "能直接体现业务价值的场景切入，并与 rwa.ltd 进一步讨论试点落地路径。"
+                if is_zh
+                else "This company has a practical basis for non-financial RWA tokenization and should begin with low-risk, high-verifiability use cases that clearly demonstrate business value through a pilot with rwa.ltd."
+            )
+
         return {
             "status": "success",
+            "summary": summary,
             "report": report_text,
             "model": DEEPSEEK_MODEL,
             "language": payload.language,
