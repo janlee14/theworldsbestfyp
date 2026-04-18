@@ -75,6 +75,82 @@ export const industries = [
       "实施分阶段路径：先在境内做非融资导向的技术筑基，再在香港等合规枢纽探索小范围试点。",
       "优先试点高价值品类：顶级品牌年份酒、稀缺产区基酒、限量联名产品。",
     ],
+en: {
+      name: "Baijiu Industry Research",
+      shortTitle: "Baijiu RWA: From Liquid Gold to Digital Assets",
+      intro: "RWA technology is reshaping the value chain of China’s baijiu industry, from anti-counterfeiting traceability to channel control, and building a trusted digital asset ecosystem.",
+      sections: [
+        {
+          title: "Industry Overview",
+          text: "China’s baijiu industry has entered a high-quality development stage characterized by lower output, higher profits, and increasing concentration. Although total production continues to decline, total profits are steadily rising, and market resources are rapidly concentrating around leading brands and core production regions. DTC models are emerging, but problems such as inventory pressure and severe channel diversion remain prominent.",
+        },
+        {
+          title: "Geographic Distribution of Core Production Regions",
+          bullets: [
+            "Sichuan Province: the largest production region in China, with 1.7406 million kiloliters of output (38.7%), represented by Yibin and Luzhou.",
+            "Guizhou Province: output of 304.4 thousand kiloliters (6.78%), centered on Kweichow Moutai.",
+            "Shanxi Province: output of 338.2 thousand kiloliters (7.53%), represented by Fenjiu.",
+            "Three trillion-yuan-level baijiu production regions have emerged in Renhuai, Yibin, and Luzhou.",
+          ],
+        },
+        {
+          title: "Value Chain and Profit Distribution",
+          bullets: [
+            "Upstream (cultivation): highly affected by climate, and supply stability is the foundation for ensuring the quality of base liquor.",
+            "Midstream (brewing and processing): dominated by major liquor companies, with leading firms investing heavily in intelligent brewing and standardized quality control.",
+            "Downstream (sales and distribution): channels are becoming more diversified, but profit margins for distributors and retailers remain relatively low, squeezing their room for survival.",
+            "Capital pain point: by the end of 2024, the total inventory of A-share listed liquor companies reached RMB 168.389 billion, occupying huge amounts of operating capital while financing barriers remained high.",
+          ],
+        },
+      ],
+      charts: [
+        {
+          type: "line",
+          title: "Key Baijiu Industry Indicator Trends (2023-2025E)",
+          data: [
+            { year: "2023", revenue: 7563, output: 629, profit: 2328 },
+            { year: "2024", revenue: 7963.84, output: 414.47, profit: 2508.65 },
+            { year: "2025E", revenue: 8400, output: 354.9, profit: 2500 },
+          ],
+          lines: [
+            { key: "revenue", name: "Revenue (RMB 100M)" },
+            { key: "output", name: "Output (10k kL)" },
+            { key: "profit", name: "Total Profit (RMB 100M)" },
+          ],
+        },
+        {
+          type: "bar",
+          title: "Output Comparison of Core Production Regions",
+          data: [
+            { label: "Sichuan", value: 174.06 },
+            { label: "Shanxi", value: 33.82 },
+            { label: "Guizhou", value: 30.44 },
+          ],
+          bars: [{ key: "value", name: "Output (10k kL)" }],
+        },
+      ],
+      tables: [
+        {
+          title: "Industry Data Table",
+          columns: ["Metric", "2023", "2024", "2025 (Estimated)"],
+          rows: [
+            ["Revenue (RMB 100M)", "7,563", "7,963.84", "8,000-8,800"],
+            ["Output (10k kL)", "629", "414.47", "~354.9"],
+            ["Total Profit (RMB 100M)", "2,328", "2,508.65", "~2,500"],
+          ],
+        },
+      ],
+      cases: [
+        "Moutai Digital Identity: each bottle is linked to as many as 58 core data points, enabling tamper-proof full-chain traceability from production to consumption and improving counterfeit interception efficiency by 17 times.",
+        "Wuliangye Digital Liquor Certificate: adopts an M2C closed-loop management model and provides direct-from-factory supply, intelligent warehousing, online circulation, and one-click pledge services. 41% of liquor certificates circulate through the platform.",
+        "Qidian Guofeng Baijiu Base Liquor RWA: the underlying assets are 62.5 tons of premium sauce-aroma baijiu base liquor and company equity. Token holders can choose physical redemption or equity redemption after five years.",
+      ],
+      recommendations: [
+        "Transform into a technology enabler and compliance advisory provider, offering blockchain traceability systems, smart contract development, and compliance architecture design for baijiu companies.",
+        "Adopt a phased path: first build a non-financing-oriented technical foundation domestically, then explore small-scale pilots in compliant hubs such as Hong Kong.",
+        "Prioritize pilots in high-value categories: top-brand vintage liquors, scarce regional base liquors, and limited-edition co-branded products.",
+      ],},
+
   },
   {
     id: "tea",
@@ -145,6 +221,76 @@ export const industries = [
       "构建三重验证体系：实地核实、防伪溯源码生成、国际检测。",
       "严格规避金融化红线，聚焦产业问题解决而非投资理财包装。",
     ],
+
+    en: {
+  name: "Tea Industry Research",
+  shortTitle: "Tea RWA: Making Every Leaf Traceable",
+  intro: "From tea garden to teacup, RWA technology offers this highly non-standard agricultural product a digital key to reducing trust costs and activating dormant assets.",
+  sections: [
+    {
+      title: "Global and China Market Comparison",
+      bullets: [
+        "Global market size: grew from USD 95.3 billion in 2018 to USD 134.4 billion in 2025, and is expected to reach USD 160 billion by 2028.",
+        "China market: domestic sales reached RMB 325.8 billion in 2024, of which the premium tea segment accounted for about RMB 103.1 billion.",
+        "Export pattern: China’s tea export value reached USD 1.74 billion in 2023, ranking first globally, but it still faces a trend of high volume with relatively low prices.",
+      ],
+    },
+    {
+      title: "China's Tea Export Structure",
+      text: "China’s tea export structure is highly concentrated, with green tea taking an overwhelmingly dominant share.",
+    },
+    {
+      title: "Comparison of Storage Conditions by Tea Type",
+      text: "Different tea categories have significantly different storage requirements due to differences in processing methods and fermentation levels.",
+    },
+  ],
+  charts: [
+    {
+      type: "bar",
+      title: "Global and China Tea Market Size Comparison",
+      data: [
+        { label: "2018", global: 953, china: 0 },
+        { label: "2025", global: 1344, china: 3258 },
+        { label: "2028E", global: 1600, china: 3600 },
+      ],
+      bars: [
+        { key: "global", name: "Global Market (USD 100M)" },
+        { key: "china", name: "China Domestic Sales (RMB 100M)" },
+      ],
+    },
+    {
+      type: "pie",
+      title: "China Tea Export Structure",
+      data: [
+        { name: "Green Tea", value: 88.11 },
+        { name: "Other Tea Types", value: 11.89 },
+      ],
+    },
+  ],
+  tables: [
+    {
+      title: "Comparison of Storage Conditions by Tea Type",
+      columns: ["Tea Type", "Process Characteristics", "Core Storage Requirements", "Risk Profile"],
+      rows: [
+        ["Green Tea", "Unfermented", "Low temperature, dry, light-proof, oxygen-isolated", "High heat and humidity can cause browning and aroma loss"],
+        ["Black Tea", "Fully fermented", "Room temperature, dry, sealed, moisture-proof", "Moisture exposure can cause mold and sour taste"],
+        ["Dark Tea / Pu-erh", "Post-fermented", "Ventilated, dry, odor-free", "Excess humidity can encourage aflatoxin growth"],
+        ["Oolong Tea", "Semi-fermented", "Low or room temperature, dry, sealed", "Light-fragrance types oxidize easily; strong-fragrance types lose roast aroma when damp"],
+        ["White Tea", "Lightly fermented", "Dry, room temperature, ventilated", "Moisture can cause mold and damage later aging potential"],
+      ],
+    },
+  ],
+  cases: [
+    "Teaken Digital Tea Cake: uses AI visual algorithms to capture the unique patterns of Pu-erh tea cakes, generate a unique feature function, and store it on-chain for one-second authenticity verification.",
+    "Mulan Tea Story Experience Center: each rights certificate corresponds to a physical tea product and can display full-chain data from picking to audit reports.",
+  ],
+  recommendations: [
+    "Provide SaaS traceability solutions to help small and medium-sized tea companies achieve rapid product digitization.",
+    "Promote regional consolidation and standardization to form asset pools that can support later RWA development.",
+    "Build a triple-verification system: on-site verification, anti-counterfeiting traceability code generation, and international testing.",
+    "Strictly avoid financialization red lines and focus on solving industry problems rather than packaging products as investments.",
+  ],
+}
   },
   {
     id: "toys",
@@ -211,6 +357,72 @@ export const industries = [
       "推广四维一体标准模型，为客户打造防伪、确权、互动、激励一体化的Web3运营生态。",
       "打造标杆合作案例，与头部潮玩品牌或知名IP方推出示范性RWA项目。",
     ],
+
+    en: {
+  name: "Collectibles Industry Research",
+  shortTitle: "Collectibles RWA: Ending Counterfeits and Rebuilding Collector Value",
+  intro: "Faced with rampant counterfeiting and a chaotic secondary market, RWA mechanisms are bringing new order and vitality to the collectibles industry through digital twins and identity binding.",
+  sections: [
+    {
+      title: "Trend of China’s Collectibles Market Size",
+      text: "Generation Z has become the main consumer group, driving rapid growth in China’s collectibles market.",
+    },
+    {
+      title: "Industry Pain Point Data",
+      bullets: [
+        "Pop Mart’s annual counterfeit-related losses exceed RMB 50 million.",
+        "The price of rare Labubu editions fell from a peak of USD 10,500 on eBay to RMB 2,800, showing extreme volatility in the secondary market.",
+      ],
+    },
+    {
+      title: "Four-in-One RWA Model",
+      text: "To systematically address the structural pain points of the collectibles industry, this model proposes a closed loop of physical toy + NFC chip + ERC-721 NFT + SBT identity badge + incentives.",
+    },
+  ],
+  charts: [
+    {
+      type: "bar",
+      title: "Key Pain Point Data in the Collectibles Industry",
+      data: [
+        { label: "Counterfeit Loss (RMB 10k)", value: 5000 },
+        { label: "Labubu Peak (USD)", value: 10500 },
+        { label: "Labubu Pullback Price (RMB)", value: 2800 },
+      ],
+      bars: [{ key: "value", name: "Value" }],
+    },
+    {
+      type: "bar",
+      title: "Collectibles Market Size",
+      data: [{ label: "2024", value: 587 }],
+      bars: [{ key: "value", name: "Market Size (RMB 100M)" }],
+    },
+  ],
+  tables: [
+    {
+      title: "Industry Pain Point Data",
+      columns: ["Issue", "Data"],
+      rows: [
+        ["Annual counterfeit loss at Pop Mart", "> RMB 50 million"],
+        ["Labubu price fluctuation", "From eBay peak of USD 10,500 down to RMB 2,800"],
+      ],
+    },
+  ],
+  flow: [
+    { title: "Physical Toy", text: "Physical Toy" },
+    { title: "ERC-721 NFT", text: "Digital Twin" },
+    { title: "SBT Identity Badge", text: "Ownership & Reputation" },
+    { title: "Incentives", text: "Rewards & Access" },
+  ],
+  cases: [
+    "MetaBox Digital Twin Blind Box: uses Chainlink VRF to generate verifiable randomness, supports NFC soul-binding, and records the first owner.",
+    "PopRaffle Social Growth Platform: supports three-person team draws, guaranteed rewards, and buyback rights, improving user experience and retention.",
+  ],
+  recommendations: [
+    "Start with lightweight directions first: ERC-721 digital collectible certificates, ERC-3525 membership-grade tokens, and SBT lottery qualifications.",
+    "Promote the four-in-one standard model to build an integrated Web3 operating ecosystem that combines anti-counterfeiting, rights confirmation, interaction, and incentives.",
+    "Create benchmark collaborations by launching demonstrative RWA projects with leading collectibles brands or well-known IP owners.",
+  ],
+}
   },
   {
     id: "gaming",
@@ -276,6 +488,71 @@ export const industries = [
       "整合轻量化交易所，为高频低价值道具提供移动端友好的交易场景。",
       "构建创作者经济，为UGC创作者提供贡献确权和素材流通基础设施。",
     ],
+
+    en: {
+  name: "Gaming Industry Research",
+  shortTitle: "Gaming RWA: My Assets, My Control",
+  intro: "By breaking platform-centered control, RWA technology gives players real ownership, usage rights, and cross-platform liquidity for virtual assets.",
+  sections: [
+    {
+      title: "Web2 vs Web3 Asset Ownership Comparison",
+      text: "Under the current Web2 game model, players only enjoy limited usage rights, while Web3 RWA enables true ownership confirmation of assets.",
+    },
+    {
+      title: "Seven Asset Types and Protocol Matching Model",
+      text: "Accurately matching underlying protocols to asset characteristics is key to building a sustainable RWA ecosystem.",
+    },
+  ],
+  charts: [
+    {
+      type: "bar",
+      title: "Illustration of Relative Advantages in the Web3 Model",
+      data: [
+        { label: "Asset Ownership", value: 95 },
+        { label: "Server Shutdown Risk Mitigation", value: 88 },
+        { label: "Trading Permission", value: 90 },
+        { label: "Data Verification", value: 92 },
+      ],
+      bars: [{ key: "value", name: "Advantage Level" }],
+    },
+  ],
+  tables: [
+    {
+      title: "Web2 vs Web3 Asset Ownership Comparison",
+      columns: ["Dimension", "Web2 Model", "Web3 RWA Model"],
+      rows: [
+        ["Asset Ownership", "Owned by the game company", "Directly owned by the player's wallet address"],
+        ["Shutdown Risk", "Assets may be deleted (for example, NetEase’s 365-day inactivity rule)", "Assets remain permanently and can circulate across platforms"],
+        ["Trading Permission", "Depends on gray-market third-party platforms and risks account bans", "Can be traded freely on decentralized exchanges"],
+        ["Data Verification", "Recorded on centralized servers and hard to verify", "Publicly verifiable on blockchain and tamper-resistant"],
+      ],
+    },
+    {
+      title: "Seven Asset Types and Protocol Matching Model",
+      columns: ["No.", "Asset Type", "Best-Fit Protocol", "Reason"],
+      rows: [
+        ["1", "Game items and skins", "ERC-721 / ERC-1155", "High-value exclusive items use ERC-721 for scarcity; batch consumables use ERC-1155 for efficiency and lower cost"],
+        ["2", "Event tickets and player qualifications", "ERC-721 / SBT", "Unique entry credentials use ERC-721; non-resellable rights use SBT"],
+        ["3", "Game merchandise and collectible cards", "ERC-721 + RFID", "Physical assets are bound to digital collectibles for authenticity verification and online-offline linkage"],
+        ["4", "IP licensing-related rights", "ERC-3525 / ERC-721", "Shared copyright income can use ERC-3525 fractions; exclusive licenses can use ERC-721"],
+        ["5", "Player achievements and credentials", "SBT", "Achievements should not be tradable and should stay identity-bound permanently"],
+        ["6", "Community co-creation rights and UGC ownership", "SBT / ERC-1155", "Contribution records use SBT; asset packs use ERC-1155"],
+        ["7", "Virtual asset and physical redemption rights", "ERC-721 / ERC-3525", "Redemption vouchers use ERC-721; partially redeemable rights use ERC-3525"],
+      ],
+    },
+  ],
+  cases: [
+    "SBT Achievement System: issues non-transferable achievement badges such as Legendary Hunter and Hundred-Win Champion, and introduces guardian mechanisms.",
+    "NFT Event Tickets: each ticket corresponds to a unique seat right, can include resale rules, and can later be upgraded into a digital commemorative ticket.",
+    "UGC Creator Network: uses ERC-1155 to build a creator asset-pack system that supports contribution ownership confirmation and traceable creative lineage.",
+  ],
+  recommendations: [
+    "Start with a lightweight MVP: prioritize an SBT player achievement system or limited-edition NFT event tickets.",
+    "Improve user experience by integrating social login and gasless wallets to lower the migration barrier for Web2 users.",
+    "Integrate lightweight exchanges to create mobile-friendly trading scenarios for high-frequency, low-value items.",
+    "Build a creator economy by providing infrastructure for contribution ownership confirmation and asset circulation for UGC creators.",
+  ],
+}
   },
   {
     id: "mechanism-design",
@@ -347,6 +624,77 @@ export const industries = [
       "优先做可验证、可执行、易被用户理解的机制，而不是先做复杂金融包装。",
       "尽早引入检测、法律、审计、托管和合规伙伴。",
     ],
+
+    en: {
+  name: "RWA Mechanism Design Guide",
+  shortTitle: "How to Design RWA Mechanisms with Non-Financial Attributes?",
+  intro: "A general framework from theory to practice that guides you in safely and efficiently building RWA solutions centered on rights confirmation, traceability, binding, and incentives.",
+  sections: [
+    {
+      title: "Four-Step Design Process",
+      bullets: [
+        "Rights confirmation: clearly define the real-world rights to be digitized.",
+        "Traceability: use IoT devices and blockchain technology to put key process data on-chain.",
+        "Binding: strongly connect the physical object with the digital credential.",
+        "Incentives: turn digital credentials into value users can perceive, such as benefits, governance rights, or reputation.",
+      ],
+    },
+    {
+      title: "Protocol Selection Decision Tree",
+      bullets: [
+        "ERC-721: unique and tradable high-value assets.",
+        "SBT: unique but non-transferable identities, qualifications, or achievements.",
+        "ERC-3525: semi-fungible assets requiring flexible splitting and combining.",
+        "ERC-20: fully fungible resources.",
+        "ERC-1155: suitable for scenarios requiring batch handling of multiple asset types.",
+      ],
+    },
+    {
+      title: "Compliance Boundary Warnings",
+      bullets: [
+        "Do not promise returns.",
+        "Do not involve redemption of physical goods into cash or financial assets.",
+        "Do not raise funds from the general public.",
+        "Follow local regulations, especially regulatory boundaries in mainland China and Hong Kong.",
+      ],
+    },
+    {
+      title: "MVP Implementation Path Template",
+      bullets: [
+        "Define the problem: identify a specific business pain point clearly.",
+        "Choose a pilot: start with a single category that has high value and strong consensus.",
+        "Design the mechanism: build a closed loop based on the four-step method and protocol decision tree.",
+        "Technical development and user testing: rapidly build prototypes and iterate continuously.",
+        "Formal launch and promotion: go live on a small scale and evaluate results.",
+      ],
+    },
+  ],
+  flow: [
+    { title: "Rights Confirmation", text: "Clarify the boundaries of real-world rights" },
+    { title: "Traceability", text: "Collect and put key data on-chain" },
+    { title: "Binding", text: "Strongly link physical objects with digital credentials" },
+    { title: "Incentives", text: "Let users perceive value and keep participating" },
+  ],
+  tables: [
+    {
+      title: "Trusted Third-Party Resource List",
+      columns: ["Category", "Institution Type", "Examples"],
+      rows: [
+        ["Testing", "Third-party quality inspection institutions", "SGS, Intertek, Bureau Veritas"],
+        ["Audit", "Compliance and security audit institutions", "EY, PwC, Hacken, CertiK"],
+        ["Custody", "Professional asset custodians", "Loomis, Brink's, BitGo (digital asset custody)"],
+        ["Legal", "Professional law firms", "Zhong Lun Law Firm, King & Wood Mallesons, Cooley LLP"],
+        ["Compliance", "Virtual Asset Service Providers (VASP)", "HashKey, OSL, Sygnum Bank"],
+      ],
+    },
+  ],
+  cases: [],
+  recommendations: [
+    "Write the non-financialization principle directly into both product design and external messaging.",
+    "Prioritize mechanisms that are verifiable, executable, and easy for users to understand, instead of starting with complex financial packaging.",
+    "Bring in testing, legal, audit, custody, and compliance partners as early as possible.",
+  ],
+}
   },
 ];
 
