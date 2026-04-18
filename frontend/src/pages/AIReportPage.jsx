@@ -1,7 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import { useI18n } from "../i18n";
+
+const pageText = {
+  en: {
+    title: "AI RWA Business Report",
+    subtitle:
+      "Enter company information and generate a tailored non-financial RWA report with DeepSeek.",
+    placeholders: {
+      company_name: "Company name",
+      industry: "Industry",
+      business_model: "Business model",
+      products: "Core products / services",
+      pain_points: "Key pain points",
+      target_customers: "Target customers",
+      digitalization_level: "Current digitalization level",
+    },
+    buttonIdle: "Generate Report",
+    buttonLoading: "Generating...",
+    summaryLabel: "Strategic Summary",
+    reportTitle: "Generated Report",
+    errorFallback: "Something went wrong.",
+    generateFailed: "Failed to generate report.",
+    langZh: "中文",
+    langEn: "English",
+  },
+  zh: {
+    title: "AI RWA 商业报告",
+    subtitle:
+      "输入公司信息，使用 DeepSeek 生成定制化的非金融 RWA 报告。",
+    placeholders: {
+      company_name: "公司名称",
+      industry: "所属行业",
+      business_model: "商业模式",
+      products: "核心产品 / 服务",
+      pain_points: "关键痛点",
+      target_customers: "目标客户",
+      digitalization_level: "当前数字化水平",
+    },
+    buttonIdle: "生成报告",
+    buttonLoading: "生成中...",
+    summaryLabel: "战略摘要",
+    reportTitle: "生成的报告",
+    errorFallback: "出了点问题。",
+    generateFailed: "生成报告失败。",
+    langZh: "中文",
+    langEn: "English",
+  },
+};
 
 export default function AIReportPage() {
+  const { language } = useI18n();
+  const text = pageText[language] || pageText.en;
+
   const [form, setForm] = useState({
     company_name: "",
     industry: "",
@@ -10,13 +61,20 @@ export default function AIReportPage() {
     pain_points: "",
     target_customers: "",
     digitalization_level: "",
-    language: "zh",
+    language: language === "zh" ? "zh" : "en",
   });
 
   const [loading, setLoading] = useState(false);
   const [summary, setSummary] = useState("");
   const [report, setReport] = useState("");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    setForm((prev) => ({
+      ...prev,
+      language: language === "zh" ? "zh" : "en",
+    }));
+  }, [language]);
 
   const handleChange = (e) => {
     setForm((prev) => ({
@@ -44,13 +102,13 @@ export default function AIReportPage() {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.detail || "Failed to generate report.");
+        throw new Error(data.detail || text.generateFailed);
       }
 
       setSummary(data.summary || "");
       setReport(data.report || "");
     } catch (err) {
-      setError(err.message || "Something went wrong.");
+      setError(err.message || text.errorFallback);
     } finally {
       setLoading(false);
     }
@@ -59,16 +117,14 @@ export default function AIReportPage() {
   return (
     <div style={styles.page}>
       <div style={styles.container}>
-        <h1 style={styles.title}>AI RWA Business Report</h1>
-        <p style={styles.subtitle}>
-          Enter company information and generate a tailored non-financial RWA report with DeepSeek.
-        </p>
+        <h1 style={styles.title}>{text.title}</h1>
+        <p style={styles.subtitle}>{text.subtitle}</p>
 
         <form onSubmit={handleSubmit} style={styles.form}>
           <input
             style={styles.input}
             name="company_name"
-            placeholder="Company name"
+            placeholder={text.placeholders.company_name}
             value={form.company_name}
             onChange={handleChange}
             required
@@ -76,7 +132,7 @@ export default function AIReportPage() {
           <input
             style={styles.input}
             name="industry"
-            placeholder="Industry"
+            placeholder={text.placeholders.industry}
             value={form.industry}
             onChange={handleChange}
             required
@@ -84,7 +140,7 @@ export default function AIReportPage() {
           <textarea
             style={styles.textarea}
             name="business_model"
-            placeholder="Business model"
+            placeholder={text.placeholders.business_model}
             value={form.business_model}
             onChange={handleChange}
             required
@@ -92,7 +148,7 @@ export default function AIReportPage() {
           <textarea
             style={styles.textarea}
             name="products"
-            placeholder="Core products / services"
+            placeholder={text.placeholders.products}
             value={form.products}
             onChange={handleChange}
             required
@@ -100,7 +156,7 @@ export default function AIReportPage() {
           <textarea
             style={styles.textarea}
             name="pain_points"
-            placeholder="Key pain points"
+            placeholder={text.placeholders.pain_points}
             value={form.pain_points}
             onChange={handleChange}
             required
@@ -108,7 +164,7 @@ export default function AIReportPage() {
           <textarea
             style={styles.textarea}
             name="target_customers"
-            placeholder="Target customers"
+            placeholder={text.placeholders.target_customers}
             value={form.target_customers}
             onChange={handleChange}
             required
@@ -116,7 +172,7 @@ export default function AIReportPage() {
           <input
             style={styles.input}
             name="digitalization_level"
-            placeholder="Current digitalization level"
+            placeholder={text.placeholders.digitalization_level}
             value={form.digitalization_level}
             onChange={handleChange}
             required
@@ -128,12 +184,12 @@ export default function AIReportPage() {
             value={form.language}
             onChange={handleChange}
           >
-            <option value="zh">中文</option>
-            <option value="en">English</option>
+            <option value="zh">{text.langZh}</option>
+            <option value="en">{text.langEn}</option>
           </select>
 
           <button type="submit" style={styles.button} disabled={loading}>
-            {loading ? "Generating..." : "Generate Report"}
+            {loading ? text.buttonLoading : text.buttonIdle}
           </button>
         </form>
 
@@ -141,14 +197,14 @@ export default function AIReportPage() {
 
         {summary && (
           <div style={styles.summaryBox}>
-            <div style={styles.summaryLabel}>Strategic Summary</div>
+            <div style={styles.summaryLabel}>{text.summaryLabel}</div>
             <div style={styles.summaryText}>{summary}</div>
           </div>
         )}
 
         {report && (
           <div style={styles.reportBox}>
-            <h2 style={styles.reportTitle}>Generated Report</h2>
+            <h2 style={styles.reportTitle}>{text.reportTitle}</h2>
             <div style={styles.markdownBody}>
               <ReactMarkdown
                 components={{
