@@ -15,15 +15,15 @@ export const homeContent = {
     },
     sections: {
       brief: {
-        title: "Company business & product brief",
+        title: "Company Business & Product Brief",
         subtitle: "What this platform is designed to do",
       },
       cases: {
-        title: "Featured lively cases",
+        title: "Featured Lively Cases",
         subtitle: "Potential application directions already mapped into the platform",
       },
       structure: {
-        title: "Site structure",
+        title: "Site Structure",
         subtitle: "The five main structures requested are already mapped here",
       },
     },
