@@ -5,7 +5,7 @@ export const homeContent = {
       title:
         "Use the platform as a non-financial RWA hub to connect merchants, customers, platform users, and industry professionals.",
       subtitle:
-        "The platform combines Home, RWA beginner education, hard-coded news, five industry research sub-pages, an AI-enabled business report module, and an online forum so different parties can collaboratively build a non-financial RWA community.",
+        "The platform combines Home, RWA beginner education, news, industry research sub-pages, an AI-enabled business report module, and an online forum so different parties can collaboratively build a non-financial RWA community.",
       buttons: {
         research: "Explore research",
         learn: "Learn RWA",
@@ -109,7 +109,7 @@ export const homeContent = {
       title:
         "将这个平台作为一个非金融 RWA 枢纽，连接商家、消费者、平台用户与行业从业者。",
       subtitle:
-        "平台整合了首页、RWA 入门教育、新闻、五个行业研究子页面、AI 商业报告模块以及在线论坛，让不同参与方能够共同建设非金融 RWA 社区。",
+        "平台整合了首页、RWA 入门教育、新闻、行业研究子页面、AI 商业报告模块以及在线论坛，让不同参与方能够共同建设非金融 RWA 社区。",
       buttons: {
         research: "查看研究",
         learn: "学习 RWA",

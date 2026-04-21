@@ -14,7 +14,7 @@ This version has been rebuilt so that the website content is actually filled int
   - Collectibles / Pop Toys
   - Gaming
   - General mechanism design guide
-- Hard-coded news page
+- news page
 - AI-enabled report form
 - Forum with create post / search / filter / like / comment
 
