@@ -51,6 +51,7 @@ uvicorn app.main:app --reload
 ```bash
 cd frontend
 npm install
+npm install react-markdown
 npm run dev
 ```
 

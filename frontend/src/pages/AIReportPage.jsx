@@ -129,6 +129,7 @@ export default function AIReportPage() {
             onChange={handleChange}
             required
           />
+
           <input
             style={styles.input}
             name="industry"
@@ -137,6 +138,7 @@ export default function AIReportPage() {
             onChange={handleChange}
             required
           />
+
           <textarea
             style={styles.textarea}
             name="business_model"
@@ -145,6 +147,7 @@ export default function AIReportPage() {
             onChange={handleChange}
             required
           />
+
           <textarea
             style={styles.textarea}
             name="products"
@@ -153,6 +156,7 @@ export default function AIReportPage() {
             onChange={handleChange}
             required
           />
+
           <textarea
             style={styles.textarea}
             name="pain_points"
@@ -161,6 +165,7 @@ export default function AIReportPage() {
             onChange={handleChange}
             required
           />
+
           <textarea
             style={styles.textarea}
             name="target_customers"
@@ -169,6 +174,7 @@ export default function AIReportPage() {
             onChange={handleChange}
             required
           />
+
           <input
             style={styles.input}
             name="digitalization_level"
@@ -178,15 +184,18 @@ export default function AIReportPage() {
             required
           />
 
-          <select
-            style={styles.input}
-            name="language"
-            value={form.language}
-            onChange={handleChange}
-          >
-            <option value="zh">{text.langZh}</option>
-            <option value="en">{text.langEn}</option>
-          </select>
+          <div style={styles.selectWrapper}>
+            <select
+              style={styles.select}
+              name="language"
+              value={form.language}
+              onChange={handleChange}
+            >
+              <option value="zh">{text.langZh}</option>
+              <option value="en">{text.langEn}</option>
+            </select>
+            <span style={styles.selectArrow}>⌄</span>
+          </div>
 
           <button type="submit" style={styles.button} disabled={loading}>
             {loading ? text.buttonLoading : text.buttonIdle}
@@ -215,11 +224,15 @@ export default function AIReportPage() {
                   ul: ({ children }) => <ul style={styles.ul}>{children}</ul>,
                   ol: ({ children }) => <ol style={styles.ol}>{children}</ol>,
                   li: ({ children }) => <li style={styles.li}>{children}</li>,
-                  strong: ({ children }) => <strong style={styles.strong}>{children}</strong>,
+                  strong: ({ children }) => (
+                    <strong style={styles.strong}>{children}</strong>
+                  ),
                   blockquote: ({ children }) => (
                     <blockquote style={styles.blockquote}>{children}</blockquote>
                   ),
-                  table: ({ children }) => <table style={styles.table}>{children}</table>,
+                  table: ({ children }) => (
+                    <table style={styles.table}>{children}</table>
+                  ),
                   th: ({ children }) => <th style={styles.th}>{children}</th>,
                   td: ({ children }) => <td style={styles.td}>{children}</td>,
                   hr: () => <hr style={styles.hr} />,
@@ -235,59 +248,99 @@ export default function AIReportPage() {
   );
 }
 
+const fieldBase = {
+  width: "100%",
+  boxSizing: "border-box",
+  borderRadius: "18px",
+  border: "1px solid rgba(255,255,255,0.12)",
+  background: "rgba(255,255,255,0.08)",
+  color: "#ffffff",
+  fontFamily: "Inter, Arial, sans-serif",
+  fontSize: "1rem",
+  fontWeight: 500,
+  lineHeight: 1.6,
+  outline: "none",
+  padding: "18px 20px",
+  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.02)",
+};
+
 const styles = {
   page: {
     minHeight: "100vh",
     background: "linear-gradient(180deg, #07111f 0%, #0b1728 35%, #101a2f 100%)",
     color: "#f8fafc",
-    padding: "40px 20px",
+    padding: "28px 20px 40px",
   },
   container: {
-    maxWidth: "960px",
+    maxWidth: "1380px",
     margin: "0 auto",
+    padding: "56px 40px 48px",
+    background: "linear-gradient(180deg, rgba(2,10,26,0.82) 0%, rgba(3,16,39,0.8) 100%)",
   },
   title: {
-    fontSize: "2.5rem",
+    fontSize: "3.15rem",
+    lineHeight: 1.08,
     fontWeight: 800,
-    marginBottom: "12px",
+    margin: "0 0 18px",
+    letterSpacing: "-0.03em",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   subtitle: {
     color: "rgba(255,255,255,0.72)",
-    marginBottom: "24px",
+    marginBottom: "28px",
     lineHeight: 1.7,
+    fontSize: "1.06rem",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   form: {
     display: "grid",
-    gap: "14px",
+    gap: "18px",
     marginBottom: "28px",
   },
   input: {
-    padding: "14px 16px",
-    borderRadius: "14px",
-    border: "1px solid rgba(255,255,255,0.12)",
-    background: "rgba(255,255,255,0.05)",
-    color: "#fff",
-    fontSize: "1rem",
+    ...fieldBase,
+    height: "60px",
   },
   textarea: {
-    minHeight: "110px",
-    padding: "14px 16px",
-    borderRadius: "14px",
-    border: "1px solid rgba(255,255,255,0.12)",
-    background: "rgba(255,255,255,0.05)",
-    color: "#fff",
-    fontSize: "1rem",
+    ...fieldBase,
+    minHeight: "148px",
     resize: "vertical",
   },
+  selectWrapper: {
+    position: "relative",
+    width: "100%",
+  },
+  select: {
+    ...fieldBase,
+    height: "60px",
+    appearance: "none",
+    WebkitAppearance: "none",
+    MozAppearance: "none",
+    cursor: "pointer",
+    paddingRight: "54px",
+  },
+  selectArrow: {
+    position: "absolute",
+    right: "22px",
+    top: "50%",
+    transform: "translateY(-50%)",
+    color: "rgba(255,255,255,0.85)",
+    fontSize: "1.5rem",
+    lineHeight: 1,
+    pointerEvents: "none",
+    fontFamily: "Inter, Arial, sans-serif",
+  },
   button: {
-    padding: "14px 18px",
-    borderRadius: "14px",
+    height: "62px",
+    borderRadius: "18px",
     border: "none",
     cursor: "pointer",
+    fontFamily: "Inter, Arial, sans-serif",
     fontWeight: 700,
     fontSize: "1rem",
     color: "#fff",
     background: "linear-gradient(135deg, #4f46e5, #06b6d4)",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.18)",
   },
   error: {
     marginTop: "12px",
@@ -296,6 +349,7 @@ const styles = {
     background: "rgba(127,29,29,0.25)",
     border: "1px solid rgba(248,113,113,0.35)",
     color: "#fecaca",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   summaryBox: {
     marginTop: "28px",
@@ -313,12 +367,14 @@ const styles = {
     textTransform: "uppercase",
     color: "#7dd3fc",
     marginBottom: "10px",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   summaryText: {
     fontSize: "1.12rem",
     lineHeight: 1.8,
     fontWeight: 600,
     color: "#f8fafc",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   reportBox: {
     marginTop: "12px",
@@ -331,9 +387,11 @@ const styles = {
     marginTop: 0,
     marginBottom: "18px",
     fontSize: "1.35rem",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   markdownBody: {
     color: "rgba(255,255,255,0.92)",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   h1: {
     fontSize: "2rem",
@@ -341,6 +399,7 @@ const styles = {
     fontWeight: 800,
     margin: "0 0 20px",
     color: "#ffffff",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   h2: {
     fontSize: "1.32rem",
@@ -348,6 +407,7 @@ const styles = {
     fontWeight: 700,
     margin: "30px 0 14px",
     color: "#ffffff",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   h3: {
     fontSize: "1.08rem",
@@ -355,12 +415,14 @@ const styles = {
     fontWeight: 700,
     margin: "22px 0 10px",
     color: "#ffffff",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   p: {
     margin: "10px 0",
     lineHeight: 1.9,
     fontSize: "1rem",
     color: "rgba(255,255,255,0.9)",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   ul: {
     margin: "10px 0 16px 20px",
@@ -374,10 +436,12 @@ const styles = {
     marginBottom: "8px",
     lineHeight: 1.85,
     color: "rgba(255,255,255,0.9)",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   strong: {
     color: "#ffffff",
     fontWeight: 700,
+    fontFamily: "Inter, Arial, sans-serif",
   },
   blockquote: {
     margin: "16px 0",
@@ -386,6 +450,7 @@ const styles = {
     background: "rgba(255,255,255,0.04)",
     borderRadius: "10px",
     color: "rgba(255,255,255,0.9)",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   table: {
     width: "100%",
@@ -399,12 +464,14 @@ const styles = {
     textAlign: "left",
     background: "rgba(255,255,255,0.06)",
     color: "#ffffff",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   td: {
     border: "1px solid rgba(255,255,255,0.12)",
     padding: "10px 12px",
     textAlign: "left",
     color: "rgba(255,255,255,0.9)",
+    fontFamily: "Inter, Arial, sans-serif",
   },
   hr: {
     border: "none",
