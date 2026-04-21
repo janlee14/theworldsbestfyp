@@ -83,7 +83,7 @@ export const homeContent = {
       {
         path: "/news",
         title: "News Section",
-        text: "news feed for the current MVP, ready to upgrade later.",
+        text: "Real-time news.",
       },
       {
         path: "/research",
@@ -187,7 +187,7 @@ export const homeContent = {
       {
         path: "/news",
         title: "新闻板块",
-        text: "当前 MVP 使用新闻流展示，后续可继续升级。",
+        text: "实时新闻。",
       },
       {
         path: "/research",
