@@ -24,7 +24,7 @@ export const homeContent = {
       },
       structure: {
         title: "Site Structure",
-        subtitle: "The five main structures requested are already mapped here",
+        subtitle: "",
       },
     },
     metrics: [
@@ -78,7 +78,7 @@ export const homeContent = {
       {
         path: "/learn-rwa",
         title: "RWA Industry Overview & Primitives for Beginners",
-        text: "Three learning pages based on the uploaded website content.",
+        text: "Three learning pages",
       },
       {
         path: "/news",
@@ -128,7 +128,7 @@ export const homeContent = {
       },
       structure: {
         title: "网站结构",
-        subtitle: "你要求的五大核心结构已经映射到这里",
+        subtitle: "",
       },
     },
     metrics: [
@@ -182,7 +182,7 @@ export const homeContent = {
       {
         path: "/learn-rwa",
         title: "RWA 行业概览与入门原语",
-        text: "基于已上传网站内容制作的三个学习页面。",
+        text: "三个学习页面。",
       },
       {
         path: "/news",

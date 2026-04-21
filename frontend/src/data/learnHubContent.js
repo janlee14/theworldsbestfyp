@@ -4,7 +4,7 @@ export const learnHubContent = {
       badge: "RWA Industry Overview & Primitives for Beginners",
       title: "Three structured learning pages are now built into the website.",
       subtitle:
-        "This section is directly filled with the uploaded content for website part two. It turns your notes into full web pages instead of leaving them as standalone documents.",
+        "",
     },
     pages: [
       {
@@ -29,7 +29,7 @@ export const learnHubContent = {
       badge: "RWA 行业概览与入门原语",
       title: "三个结构化学习页面现已集成到网站中。",
       subtitle:
-        "这一部分直接使用了你上传的第二部分网站内容，把原本的笔记整理成完整网页，而不是让它们停留在独立文档里。",
+        "",
     },
     pages: [
       {
