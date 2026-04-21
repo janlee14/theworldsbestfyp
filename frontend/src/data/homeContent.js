@@ -83,7 +83,7 @@ export const homeContent = {
       {
         path: "/news",
         title: "News Section",
-        text: "Hard-coded news feed for the current MVP, ready to upgrade later.",
+        text: "news feed for the current MVP, ready to upgrade later.",
       },
       {
         path: "/research",
