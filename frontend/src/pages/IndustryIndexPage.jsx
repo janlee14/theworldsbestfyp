@@ -4,13 +4,13 @@ import { industries } from "../data/industryResearch";
 
 const pageContent = {
   en: {
-    badge: "Industry Research × 5",
+    badge: "Industry Research",
     title: "Five structured reports from different industries",
     subtitle:
       "Baijiu, tea, collectibles, gaming, and one general RWA mechanism design guide.",
   },
   zh: {
-    badge: "行业研究 × 5",
+    badge: "行业研究",
     title: "来自不同行业的五份结构化研究报告",
     subtitle: "白酒、茶叶、潮玩、游戏，以及一页通用的 RWA 机制设计指南。",
   },

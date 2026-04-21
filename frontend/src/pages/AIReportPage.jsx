@@ -4,7 +4,7 @@ import { useI18n } from "../i18n";
 
 const pageText = {
   en: {
-    title: "AI RWA Business Report",
+    title: "AI Non-Financial RWA Business Report",
     subtitle:
       "Enter company information and generate a tailored non-financial RWA report with DeepSeek.",
     placeholders: {
@@ -26,7 +26,7 @@ const pageText = {
     langEn: "English",
   },
   zh: {
-    title: "AI RWA 商业报告",
+    title: "AI 非金融 RWA 商业报告",
     subtitle:
       "输入公司信息，使用 DeepSeek 生成定制化的非金融 RWA 报告。",
     placeholders: {

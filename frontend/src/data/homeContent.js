@@ -30,7 +30,7 @@ export const homeContent = {
     metrics: [
       { label: "Learning pages", value: "3" },
       { label: "Industry sub-pages", value: "5" },
-      { label: "Forum sections", value: "5+" },
+      { label: "Forum sections", value: "5" },
       { label: "To-B report flow", value: "AI-enabled" },
     ],
     productCards: [
@@ -87,7 +87,7 @@ export const homeContent = {
       },
       {
         path: "/research",
-        title: "Industry Research × 5",
+        title: "Industry Research",
         text: "Baijiu, tea, collectibles, gaming, and mechanism design guide sub-pages with charts and recommendations.",
       },
       {
@@ -134,7 +134,7 @@ export const homeContent = {
     metrics: [
       { label: "学习页面", value: "3" },
       { label: "行业子页面", value: "5" },
-      { label: "论坛板块", value: "5+" },
+      { label: "论坛板块", value: "5" },
       { label: "To-B 报告流程", value: "AI 驱动" },
     ],
     productCards: [
@@ -191,7 +191,7 @@ export const homeContent = {
       },
       {
         path: "/research",
-        title: "行业研究 × 5",
+        title: "行业研究",
         text: "白酒、茶叶、潮玩、游戏与机制设计指南等子页面，含图表与建议。",
       },
       {
