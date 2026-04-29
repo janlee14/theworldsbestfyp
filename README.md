@@ -1,7 +1,5 @@
 # Non-Financial RWA Hub
 
-This version has been rebuilt so that the website content is actually filled into the frontend, and the FastAPI backend can also serve the built React site.
-
 ## What is included
 - Home page with platform positioning and quick entry
 - 3 learning pages:
@@ -17,6 +15,7 @@ This version has been rebuilt so that the website content is actually filled int
 - news page
 - AI-enabled report form
 - Forum with create post / search / filter / like / comment
+- Chinese / English language switching
 
 ## Option A: easiest way (open the real site at localhost:8000)
 ### 1) Build the frontend
@@ -75,7 +74,7 @@ The Vite dev server proxies `/api` to the backend automatically.
 
 ## News API setup
 
-The News page now loads live titles from the NewsData crypto endpoint through the backend.
+The News page loads live titles from the NewsData crypto endpoint through the backend.
 
 1. Create `backend/.env`
 2. Paste your key:
@@ -89,3 +88,20 @@ NEWSDATA_MAX_RESULTS=20
 3. Restart the backend server
 
 The frontend only calls `/api/news`, so your API key stays on the server side.
+
+## AI Report setup
+
+The AI Report page uses DeepSeek through the backend.
+
+1. Open `backend/.env`
+2. Add
+
+```env
+DEEPSEEK_API_KEY=your_deepseek_api_key_here
+DEEPSEEK_BASE_URL=https://api.deepseek.com
+DEEPSEEK_MODEL=deepseek-chat
+```
+
+3. Restart the backend server
+
+The frontend only calls `/api/reports/generate`, so your API key stays on the server side.
